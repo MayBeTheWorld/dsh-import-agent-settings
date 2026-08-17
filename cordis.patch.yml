@@ -1,0 +1,13 @@
+# dsh-import-agent-settings bundle patch: one dual-face plugin row.
+#
+# The row is a bare plugin by package name: the node half (exports ".") runs
+# in the host process (source scanning, parsing, patch-layer import) and the
+# `dsh.client` declaration in package.json makes the browser half (exports
+# "./client", served at /plugins/<id>/client.js) load in the web GUI. The
+# browser half registers a row into the General settings page
+# (`settings.general.item` slot), not a new top-level section.
+#
+# `id` is stable for user patch toggling; `name` must match package.json.
+- insert:
+    - id: ui-import-agent-settings
+      name: 'dsh-import-agent-settings'
