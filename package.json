@@ -43,6 +43,11 @@
     "LICENSE"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MayBeTheWorld/dsh-inherit.git"
+  },
+  "homepage": "https://github.com/MayBeTheWorld/dsh-inherit#readme",
   "keywords": [
     "deepseek-harness",
     "dsh",
