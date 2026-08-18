@@ -1,5 +1,5 @@
 {
-  "name": "dsh-import-agent-settings",
+  "name": "dsh-inherit",
   "version": "0.1.0",
   "description": "导入智能体设置：从 Claude Code / Cursor / Codex / cc-switch 一键导入 Skills、MCP、指令、模型供应商等到 DeepSeek Harness（设置 → 通用设置 → 导入智能体设置）",
   "type": "module",

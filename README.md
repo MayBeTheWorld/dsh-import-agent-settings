@@ -1,4 +1,6 @@
-# dsh-import-agent-settings
+# dsh-inherit
+
+English | [中文](README.zh.md)
 
 **Import agent settings into DeepSeek Harness** — one-click migration of MCP servers and Skills from **Claude Code / Cursor / Codex / cc-switch** into DSH, from a row inside **Settings → General → 导入智能体设置**.
 
@@ -34,14 +36,14 @@ Codex CLI ships an `/import` that pulls Claude Code / Cursor config into Codex. 
 
 ```powershell
 # from npm (once published)
-dsh plugin --profile web add dsh-import-agent-settings
+dsh plugin --profile web add dsh-inherit
 # or from a local checkout
-dsh plugin --profile web add "D:\path\to\dsh-import-agent-settings"
+dsh plugin --profile web add "D:\path\to\dsh-inherit"
 ```
 
 Then open **Settings → General → 导入智能体设置**.
 
-The package declares `dsh.bundle.patch` + `dsh.client`, so `dsh plugin add` reconciles it into the profile's `dsh.profile.bundles` layer and serves the browser half at `/plugins/dsh-import-agent-settings/client.js`. New bundles hot-mount after a short delay; host module code changes need a `dsh web` restart.
+The package declares `dsh.bundle.patch` + `dsh.client`, so `dsh plugin add` reconciles it into the profile's `dsh.profile.bundles` layer and serves the browser half at `/plugins/dsh-inherit/client.js`. New bundles hot-mount after a short delay; host module code changes need a `dsh web` restart.
 
 ## Usage
 
@@ -55,7 +57,7 @@ The package declares `dsh.bundle.patch` + `dsh.client`, so `dsh plugin add` reco
 
 ```
 dual-face plugin (one bundle row + dsh.client declaration)
-├─ lib/index.js   host half — /api/dsh-import/sources + /api/dsh-import/run (loopback-only guard)
+├─ lib/index.js   host half — /api/dsh-inherit/sources + /api/dsh-inherit/run (loopback-only guard)
 ├─ lib/import.js  pure logic — source scan, multi-format parsing (mcpServers JSON, Codex TOML,
 │                 cc-switch sqlite), MCP→patch / Skills→~/.dsh/skills
 └─ lib/client.js  browser half — settings.general.item row → centered Modal → toggle cards →

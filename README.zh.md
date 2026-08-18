@@ -1,4 +1,6 @@
-# dsh-import-agent-settings
+# dsh-inherit
+
+[English](README.md) | 中文
 
 **导入智能体设置** —— 在「设置 → 通用设置」新增一行"导入智能体设置"，弹出带遮罩的居中卡片，从 **Claude Code / Cursor / Codex / cc-switch** 一键导入 **MCP 服务器**与 **Skills** 到 DeepSeek Harness。
 
@@ -34,14 +36,14 @@ Codex CLI 自带 `/import`，能把 Claude Code / Cursor 的配置一键导进 C
 
 ```powershell
 # 从 npm（发布后）
-dsh plugin --profile web add dsh-import-agent-settings
+dsh plugin --profile web add dsh-inherit
 # 或本地目录
-dsh plugin --profile web add "D:\path\to\dsh-import-agent-settings"
+dsh plugin --profile web add "D:\path\to\dsh-inherit"
 ```
 
 然后打开 **设置 → 通用设置 → 导入智能体设置**。
 
-包声明了 `dsh.bundle.patch` + `dsh.client`，`dsh plugin add` 会把它 reconcile 进 profile 的 `dsh.profile.bundles` 层，浏览器半区由 `/plugins/dsh-import-agent-settings/client.js` 提供。新 bundle 延迟后热挂载；host 模块代码改动需重启 `dsh web`。
+包声明了 `dsh.bundle.patch` + `dsh.client`，`dsh plugin add` 会把它 reconcile 进 profile 的 `dsh.profile.bundles` 层，浏览器半区由 `/plugins/dsh-inherit/client.js` 提供。新 bundle 延迟后热挂载；host 模块代码改动需重启 `dsh web`。
 
 ## 使用
 
@@ -55,7 +57,7 @@ dsh plugin --profile web add "D:\path\to\dsh-import-agent-settings"
 
 ```
 双面插件（一个 bundle 行 + dsh.client 声明）
-├─ lib/index.js   host 半区 — /api/dsh-import/sources + /api/dsh-import/run（loopback 护栏）
+├─ lib/index.js   host 半区 — /api/dsh-inherit/sources + /api/dsh-inherit/run（loopback 护栏）
 ├─ lib/import.js  纯业务 — 来源扫描、多格式解析（mcpServers JSON、Codex TOML、
 │                 cc-switch sqlite）、MCP→patch / Skills→~/.dsh/skills
 └─ lib/client.js  browser 半区 — settings.general.item 行 → 居中 Modal → 开关卡片 →

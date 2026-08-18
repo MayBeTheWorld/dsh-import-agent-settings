@@ -17,7 +17,7 @@ import {
 
 /** 造一个临时目录，返回路径。 */
 function tmp() {
-  return mkdtempSync(join(tmpdir(), 'dsh-import-test-'))
+  return mkdtempSync(join(tmpdir(), 'dsh-inherit-test-'))
 }
 
 // ── extractFromJson ─────────────────────────────────────────────────────

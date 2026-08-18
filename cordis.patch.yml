@@ -1,4 +1,4 @@
-# dsh-import-agent-settings bundle patch: one dual-face plugin row.
+# dsh-inherit bundle patch: one dual-face plugin row.
 #
 # The row is a bare plugin by package name: the node half (exports ".") runs
 # in the host process (source scanning, parsing, patch-layer import) and the
@@ -9,5 +9,5 @@
 #
 # `id` is stable for user patch toggling; `name` must match package.json.
 - insert:
-    - id: ui-import-agent-settings
-      name: 'dsh-import-agent-settings'
+    - id: ui-inherit
+      name: 'dsh-inherit'
