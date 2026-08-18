@@ -5,8 +5,12 @@
   "type": "module",
   "main": "lib/index.js",
   "exports": {
-    ".": { "default": "./lib/index.js" },
-    "./client": { "default": "./lib/client.js" },
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
     "./package.json": "./package.json"
   },
   "dsh": {
@@ -43,5 +47,8 @@
     "import",
     "mcp",
     "migration"
-  ]
+  ],
+  "dependencies": {
+    "@deepseek-ai/schemastery": "^3.18.1"
+  }
 }
